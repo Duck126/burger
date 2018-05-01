@@ -1,4 +1,6 @@
 -- Insert a set of records.
-INSERT INTO burgers (burger) VALUES ('Mushroom Swiss Burger', false);
-INSERT INTO burgers (burger) VALUES ('Bacon Avacado Burger', false);
-INSERT INTO burgers (burger) VALUES ('Habanero Burger', false);
+USE burgers_db;
+
+INSERT INTO burgers (burger_name, devoured) VALUES ('Mushroom Swiss Burger', "FALSE");
+INSERT INTO burgers (burger_name, devoured) VALUES ('Bacon Avacado Burger', "FALSE");
+INSERT INTO burgers (burger_name, devoured) VALUES ('Habanero Burger', "FALSE");
