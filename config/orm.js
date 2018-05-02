@@ -1,29 +1,40 @@
 var connection = require("./connection.js");
 
-var exports = module.exports = {};
+var orm = {
 
-
-   exports.selectAll = function () {
-        connection.query("SELECT * FROM burgers;", function (err, data) {
+selectAll: function (tableInput, cb) {
+    var queryString = "SELECT * FROM ??";
+        connection.query(queryString, tableInput, function (err, data) {
             if (err) throw err;
-            console.log(data);
+            //console.log(data);
         })
-    }
+        cb(data);
+    },
 
-   exports.insertOne = function  (name, devoured) {
-        connection.query("INSERT INTO burgers (burger_name, devoured) VALUES ( ?, ?);", [name, devoured], function(err, burgerData){
+   insertOne:  function  (tableInput, [burger_name, devoured], burgerInput, devouredInput, cb) {
+       var queryString = "INSERT INTO ?? (? , ?) VALUES (? , ?);"
+        connection.query(queryString, [tableInput, burger_name, devoured, burgerInput, devouredInput ], function(err, burgerData){
             if (err) throw err;
             console.log('Success! Inserted: ' + name + 'into the burgers table.');
         })
-    }
+        cb(data);
+    },
 
-   exports.updateOne = function  (id) {
-        connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?;", id,  function(err, burgerData){
+   updateOne : function  (tableInput, columnInput, updateInput, id, cb) {
+       var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?;";
+        connection.query(queryString, [tableInput, columnInput, updateInput, id],  function(err, burgerData){
             if (err) throw err;
-            console.log(burgerData.eff);
             console.log('Success! ' + burgerData.affectedRows + ' burgers devoured!');
         })
+        cb(data);
     }
+
+};
+
+module.exports = orm;
+
+
+   
     
 
 

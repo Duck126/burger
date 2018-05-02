@@ -1,11 +1,32 @@
-const mydb = require("../config/orm.js");
+const orm = require("../config/orm.js");
 
-mydb.selectAll();
+//selectAll : orm.selectAll("burgers");
+
+//updateOne : orm.updateOne("burgers" , columnInput, updateInput, id);
+
+//insertOne : orm.insertOne("burgers" , burger_name, devoured, burgerInput, devouredInput);
+
+var burger = {
+
+    selectAll: function(cb) {
+        orm.selectAll("burgers", function(data){
+            cb(data);
+        });
+    },
+
+    insertOne: function(tableInput,[burger_name, devoured] , burgerInput, devouredInput, cb){
+        orm.insertOne("burgers", [burger_name, devoured], burgerInput, devouredInput, cb, function(data){
+            cb(data);
+        });
+    },
+
+    updateOne: function(tableInput, columnInput, updateInput, id, cb) {
+        orm.updateOne("burgers", columnInput, updateInput, id, cb, function(data){
+            cb(data);
+        });
+    }
+}
 
 
-//mydb.insertOne("Turkey Burger", 0);
-
-mydb.updateOne(5);
 
 
-mydb.selectAll();
