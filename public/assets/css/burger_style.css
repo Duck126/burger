@@ -1,51 +1,90 @@
 .bobs-burgers{
-    color: red;
-    background-color: yellow;
+    color: #dc3545;
+    background-color:#ffc107;
     font-family: 'Luckiest Guy', cursive;
     border-width: 4px;
     border-style: solid;
-    border-color: red;
+    border-color: #dc3545;
     border-radius: 5px;
     text-align: center;
-    width: 25%;
-    margin-left: 32.5%;
+    opacity: .9;
 }
 
-.bobs-burgers2{
-    color: red;
-    background-color: yellow;
-    font-family: 'Luckiest Guy', cursive;
-    border-radius: 5px;
-    border-width: 4px;
+.borderstyle{
+    border-width:3px;
+    border-color: #dc3545;
     border-style: solid;
-    border-color: red;
-    text-align: center;
+    border-radius: 5px;
+    background-color: #ffc107;
+}
+
+.img-div{
+    width: 700px;
+    position: relative;
+    z-index: -1;
+    left: 27.5%;
+    margin-top: 4.75%;
+}
+
+.header{
+    width: 40%;
+    margin-left: 27.5%;
+    margin-top: 1.5%;
+}
+
+.bottom{
     width: 25%;
+    position: absolute;
+    top: 72.5%;
+    left: 35%;
 }
 
 .right{
+    width: 25%;
     position: absolute;
-    right: 14%;
+    right: 2.5%;
+    top: 11.5%;
 }
+
 .left{
+    width: 20%;
     position: absolute;
-    left: 9%;
+    left: 2.5%;
     top: 11.5%;
 }
 
 .list-group{
     position: absolute;
     top: 20%;
-    left: 7.5%;
+    left: 1.5%;
 }
 
 .list-group2{
     position: absolute;
-    right: 7.5%;
+    right: 1.5%;
     top: 20%;
+    padding-left: 0%;
 }
+
+.list-group-item{
+    
+    font-family:'Luckiest Guy', cursive;
+    color: #dc3545;
+    font-size: 15px;
+}
+
 .create-form{
     position: absolute;
-    top:20%;
-    left: 25%;
+    top: 80%;
+    left: 37.5%;
+    width: 20%;
+    height: 15%;
+}
+
+.btn{
+    margin-left: 5px;
+}
+
+.form-control{
+    margin-top: 10px;
 }

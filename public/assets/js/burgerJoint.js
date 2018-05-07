@@ -6,17 +6,13 @@ $(function () {
         var burgerEaten = {
             devoured: (ateIt ? 0 : 1)
         };
-        console.log("FrontEnd Pre Ajax", burgerEaten);
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: burgerEaten
         }).then(function () {
-                console.log("change burger to", ateIt);
                 location.reload();
             }
-
         );
-
     });
 
     $(".delete-button").on("click", function (event) {
@@ -24,7 +20,6 @@ $(function () {
         $.ajax("/api/burgers/" + id, {
             type: "DELETE",
         }).then(function () {
-            //console.log("Threw away burger ID: ", id);
             location.reload();
         });
 
@@ -34,7 +29,6 @@ $(function () {
         event.preventDefault();
         var name = $("input#burg").val().trim();
         var eaten = 0;
-        console.log(name, "name front end");
         var add = {
             name,
              eaten
@@ -45,7 +39,6 @@ $(function () {
             type: "POST",
             data: add
         }).then(function () {
-            console.log("made burger");
             location.reload();
         });
     });

@@ -1,32 +1,37 @@
-<h1 class="bobs-burgers">Burger Joint</h1>
+<h1 class="bobs-burgers header">BOB'S BURGERS</h1>
 
-<h2 class="bobs-burgers2 left">Burgers</h2>
 
-<ul class="list-group">
-    {{#each burgers}}
-      {{#unless devoured}}
-        {{> burgers/burger-line ateIt=false}}
-      {{/unless}}
-    {{/each}}    
-</ul>
-<br>
-<h2 class="bobs-burgers2 right">Eaten Burgers</h2>
+  <h2 class="bobs-burgers left">Burgers</h2>
 
-<ul class="list-group2">
-    {{#each burgers}}
-      {{#if devoured}}
-        {{>burgers/burger-line ateIt=true}}
-      {{/if}}
-    {{/each}}    
-</ul>
+  <ul class="list-group borderstyle">
+    {{#each burgers}} {{#unless devoured}} {{> burgers/burger-line ateIt=false}} {{/unless}} {{/each}}
+  </ul>
 
-<form class="create-form">
 
-  <div class="form-group" action="submit">
-    <label for="burg">Burger: </label>
-    <input type="text" id="burg">
-  </div>
 
-  <button type="submit" >Add Burger</button>
-</form>
 
+
+  <h2 class="bobs-burgers right">Eaten Burgers</h2>
+
+  <ul class="list-group2 borderstyle">
+    {{#each burgers}} {{#if devoured}} {{>burgers/burger-line ateIt=true}} {{/if}} {{/each}}
+  </ul>
+
+
+<div class="img-div">
+  <img class="backimg borderstyle" src="/assets/imgs/Bobsburgers.jpg">
+</div>
+
+<div>
+  <h2 class="bobs-burgers bottom">Make a Burger</h2>
+
+  <form class="create-form borderstyle">
+    <div class="form-group" action="submit">
+      <div class="col-auto">
+        <label class="sr-only" for="burg">Burger: </label>
+        <input type="text" class="form-control mb-2 borderstyle" id="burg" placeholder="Make a burger?">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Add Burger</button>
+  </form>
+</div>
