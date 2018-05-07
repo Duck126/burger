@@ -17,7 +17,9 @@ var burger = {
 
     insertOne: function(columns, values, cb){
         //console.log("add", [columns, values, cb]);
+        console.log("burger.insertOne")
         orm.insertOne("burgers", columns, values, function(data){
+            console.log("orm.insertOne callback");
             cb(data);
         });
     },

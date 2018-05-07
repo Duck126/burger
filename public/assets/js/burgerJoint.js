@@ -46,8 +46,7 @@ $(function () {
             data: add
         }).then(function () {
             console.log("made burger");
-            //location.reload();
-            console.log(addedBurger);
+            location.reload();
         });
     });
 

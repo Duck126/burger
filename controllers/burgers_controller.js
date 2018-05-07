@@ -15,14 +15,11 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-    //console.log(req.body);
-    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (data) {
-        //console.log(data);
-        //console.log(res.id ," id controller");
-        //console.log(req.body);
-        //console.log(data);
-        //console.log(res);
-        cb(data);
+    console.log([req.body.name, req.body.eaten]);
+    burger.insertOne(["burger_name", "devoured"], [req.body.name, req.body.eaten], function (data) {
+    console.log(data);
+        
+        res.sendStatus(200);
     });
 });
 

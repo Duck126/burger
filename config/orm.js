@@ -47,6 +47,7 @@ var orm = {
     },
 
     insertOne: function (tableInput, columns, values, cb) {
+        console.log("orm.insertOne");
         var queryString = "INSERT INTO " + tableInput;
         queryString += " (";
         queryString += columns.toString();
@@ -55,15 +56,17 @@ var orm = {
         queryString += printQuestionMarks(values.length);
         queryString += ") ";
 
-        //console.log(queryString);
-        connection.query(queryString, columns, values, function (err, data) {
+        console.log(queryString);
+        connection.query(queryString, values, function (err, data) {
+            console.log("inquiry");
             if (err) {
-                throw err;
+                console.log(err);
             }
             console.log(data);
-            cb(data);
+            if(cb){
+               cb(data);
+            } 
         });
-        
     },
 
     updateOne: function (tableInput, columnInput, updateInput, id, cb) {

@@ -1,21 +1,21 @@
-<h1>Burger Joint</h1>
+<h1 class="bobs-burgers">Burger Joint</h1>
 
-<h2>Burgers</h2>
+<h2 class="bobs-burgers2 left">Burgers</h2>
 
-<ul>
+<ul class="list-group">
     {{#each burgers}}
       {{#unless devoured}}
         {{> burgers/burger-line ateIt=false}}
       {{/unless}}
     {{/each}}    
 </ul>
+<br>
+<h2 class="bobs-burgers2 right">Eaten Burgers</h2>
 
-<h2>Eaten Burgers</h2>
-
-<ul>
+<ul class="list-group2">
     {{#each burgers}}
       {{#if devoured}}
-        {{> burgers/burger-line ateIt=true}}
+        {{>burgers/burger-line ateIt=true}}
       {{/if}}
     {{/each}}    
 </ul>
