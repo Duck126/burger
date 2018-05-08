@@ -34,7 +34,6 @@ $(function () {
              eaten
         };
         
-       
         $.ajax("/api/burgers", {
             type: "POST",
             data: add
